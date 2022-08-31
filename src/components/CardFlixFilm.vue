@@ -3,11 +3,14 @@
         <div class="img">
             <img :src="getPoster(info.poster_path)" :alt="info.title"><!--richiamo il metodo che ciclerà le foto in base al film-->
         </div>
-        <div class="description">
-            <span><strong>Titolo: </strong>{{info.title}}</span> 
-            <span><strong>Titolo originale: </strong>{{info.original_title}}</span>
-            <span class="lingua"><strong>Lingua: </strong>{{info.original_language}}</span>
-            <span class="voto"><strong>Voto: </strong> <StarFlix :vote="info.vote_average" /></span>
+        <div class="border-out">
+            <div class="description">
+                <span><strong>Titolo</strong><br>{{info.title}}</span> 
+                <span><strong>Titolo originale</strong><br>{{info.original_title}}</span>
+                <span><strong>Lingua</strong><br>{{info.original_language}}</span>
+                <span><strong>Voto</strong><br> <StarFlix :vote="info.vote_average" /></span>
+                <p><span><strong>Overview</strong><br></span><br>{{info.overview}}</p>
+            </div>
         </div><!--aggiungo il componente StarFlix dove gli passerò il voto ciclato, ma come risultato ci saranno le stelle-->
     </div>
 </template>
