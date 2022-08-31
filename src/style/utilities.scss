@@ -1,0 +1,18 @@
+.card{
+    width: calc(100% / 5 - 20px);
+    height: 400px;
+    margin: 10px 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .img{
+        width: 150px;
+        height: 150px;
+        img{
+            width: 150px;
+            height: 150px;
+        }
+    }
+}//regole stile che importo nelle varie card

@@ -20,7 +20,7 @@ export default {
     return{
       movies: [],//torno array vuoto che verrà popolato dalla chiamata API con i film
       api_key: 'fbf92bf5e34c88255fa295508c54019f', //key per API,
-      series: []//torno array vuoto che verrà popolato da chiamta Api con le serie tv
+      series: [],//torno array vuoto che verrà popolato da chiamta Api con le serie tv
     }
   },
   methods:{
