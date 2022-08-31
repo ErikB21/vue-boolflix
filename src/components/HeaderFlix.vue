@@ -31,13 +31,18 @@ export default {
 <style scoped lang="scss">
     header{
         width: 100%;
-        padding-right: 3rem;
+        height: 10vh;
         background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
         nav{
-            padding: 2rem 0;
+            padding: 1rem 0;
             display: flex;
             justify-content: end;
             align-items: center;
+            
             input{
                 padding: 0.5rem 0;
                 width: 20rem;

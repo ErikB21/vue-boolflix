@@ -27,7 +27,7 @@ export default {
     doSearchMovieAndSeries(query){
       const params= {
         query: query,
-        api_key: this.api_key
+        api_key: this.api_key,
       }
       axios.get(`https://api.themoviedb.org/3/search/movie`, { params }).then(response => {
         this.movies = response.data.results; //salviamo nel nostro array vuoto la nostra chiamta ad axios per i film
