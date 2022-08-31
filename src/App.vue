@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderFlix @searching="starSearch" />
-    <MainFlix :movies="movies" /> <!--aggiungo la variabile popolata dalla chiamata axios in un valore che passerò come props-->
+    <MainFlix :movies="movies" :series="series" /> <!--aggiungo la variabile popolata dalla chiamata axios in un valore che passerò come props-->
   </div>
 </template>
 
@@ -18,22 +18,27 @@ export default {
   },
   data(){
     return{
-      movies: [],//torno array vuoto che verrà popolato dalla chiamata API
-      api_key: 'fbf92bf5e34c88255fa295508c54019f', //key per API
+      movies: [],//torno array vuoto che verrà popolato dalla chiamata API con i film
+      api_key: 'fbf92bf5e34c88255fa295508c54019f', //key per API,
+      series: []//torno array vuoto che verrà popolato da chiamta Api con le serie tv
     }
   },
   methods:{
-    doSearchMovie(query){
+    doSearchMovieAndSeries(query){
       const params= {
         query: query,
         api_key: this.api_key
       }
-      return axios.get(`https://api.themoviedb.org/3/search/movie`, { params }).then((response) => {
-        this.movies = response.data.results; //salviamo nel nostro array vuoto la nostra chiamta ad axios
+      axios.get(`https://api.themoviedb.org/3/search/movie`, { params }).then(response => {
+        this.movies = response.data.results; //salviamo nel nostro array vuoto la nostra chiamta ad axios per i film
       });
+      axios.get(`https://api.themoviedb.org/3/search/tv`, {params}).then(response =>{
+        this.series = response.data.results; //salviamo nell'array vuoto la chiamata ad axios per le serie tv
+      })
+      
     },
-    starSearch(query){//filtra tra i movie
-      this.doSearchMovie(query);
+    starSearch(query){//filtra tra i movie e le serie
+      this.doSearchMovieAndSeries(query);
     }
   }
 }

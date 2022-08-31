@@ -4,7 +4,7 @@
             <input v-model="keySearch" @keyup.enter="searchKey" type="text" placeholder="Cerca e spera che funzioni..."/>
             <button @click="searchKey" type="button">Cerca</button>
 
-            <!--aggiungo v-model ad input con valore 'keySearch', che sarà il titolo dei film filtrati -> 
+            <!--aggiungo v-model ad input con valore 'keySearch', che sarà il titolo dei film e serie filtrati -> 
                 con @searching passo al padre (HeaderFlix) in App.vue l'evento da scatenare -->
             <!-- il $emit passa dal figlio (HeaderFlix) al padre (App.vue) il dato e aggancia due parametri:
             il nome dell'avento (searching) che passa al padre e il valore passato dall'input tramite v-model 'keySearch'-->
