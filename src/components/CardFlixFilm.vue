@@ -7,7 +7,7 @@
             <span><strong>Titolo: </strong>{{info.title}}</span> 
             <span><strong>Titolo originale: </strong>{{info.original_title}}</span>
             <span class="lingua"><strong>Lingua: </strong>{{info.original_language}}</span>
-            <span class="voto"><strong>Voto: </strong> <StarFlix :vote="infoSerie.vote_average" /></span>
+            <span class="voto"><strong>Voto: </strong> <StarFlix :vote="info.vote_average" /></span>
         </div><!--aggiungo il componente StarFlix dove gli passerò il voto ciclato, ma come risultato ci saranno le stelle-->
     </div>
 </template>
