@@ -4,8 +4,11 @@
             <img src="../assets/Senza titolo.png" alt="">
         </div>
         <div class="cerca">
-            <input v-model="keySearch" @keyup.enter="searchKey" type="text" placeholder="Cerca e spera che funzioni..."/>
-            <button @click="searchKey" type="button">Cerca</button>
+            <span class="input">
+                <input v-model="keySearch" @keyup.enter="searchKey" type="text" placeholder="Cerca e spera che funzioni..."/>
+            </span>
+            <span></span>
+            <button class="button-49" @click="searchKey" role="button">Cerca</button>
         </div>
             
             <!--aggiungo v-model ad input con valore 'keySearch', che sarà il titolo dei film e serie filtrati -> 
@@ -32,31 +35,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    header{
-        width: 100%;
-        height: 13vh;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: black;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 999;
-        padding: 0 20px;
-        .logo{
-            width: 130px;
-            img{
-                width: 100%;
-            }
-        }
-        input{
-            padding: 0.5rem 0;
-            width: 15rem;
-            margin: 0 1rem;
-        }
-        button{
-            padding: 0.5rem 1.5rem;
-        }
-    }
+    @import '../style/styleAnimHead.scss'
 </style>

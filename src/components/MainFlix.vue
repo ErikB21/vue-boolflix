@@ -58,6 +58,7 @@ export default {
                 flex-wrap: wrap;
                 justify-content: center;
                 
+                
                 .eb_marg{
                     margin: 20px 5px;
                 }
