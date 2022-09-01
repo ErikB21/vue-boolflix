@@ -7,7 +7,7 @@
             <div class="description">
                 <span><strong>Titolo</strong><br>{{infoSerie.name}}</span>
                 <span><strong>Titolo originale</strong><br>{{infoSerie.original_name}}</span>
-                <span><strong>Lingua</strong><br>{{infoSerie.original_language}}</span>
+                <span class="img-flag"><strong>Lingua</strong><br><img class="flag" v-if="flag.includes(infoSerie.original_language)" :src="require('../assets/' + infoSerie.original_language + '.png')" :alt="infoSerie.original_language"/></span>
                 <span><strong>Voto</strong><br> <StarFlix :vote="infoSerie.vote_average" /></span>
                 <p><span><strong>Overview</strong></span><br>{{infoSerie.overview}}</p>
             </div>
@@ -21,6 +21,11 @@ export default {
     name: 'CardFlixSerie',
     props:{
         infoSerie: Object,//'infoSerie' rimanda un object ( ossia i singoli film compresi nell'array di oggetti filtrati)
+    },
+    data(){
+        return{
+            flag: ['ca','it', 'en', 'fr', 'es', 'da', 'ja', 'ko', 'nl','no', 'pt', 'ro', 'ru', 'sv', 'zh'],//add ogni bandiera che ci serve
+        }
     },
     methods:{
         getPoster(path){//se il nostro parametro path è null, ritorna 404

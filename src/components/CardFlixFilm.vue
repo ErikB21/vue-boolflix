@@ -7,7 +7,7 @@
             <div class="description">
                 <span><strong>Titolo</strong><br>{{info.title}}</span> 
                 <span><strong>Titolo originale</strong><br>{{info.original_title}}</span>
-                <span><strong>Lingua</strong><br>{{info.original_language}}</span>
+                <span class="img-flag"><strong>Lingua</strong><br><img class="flag" v-if="flag.includes(info.original_language)" :src="require('../assets/' + info.original_language + '.png')" :alt="info.original_language"/></span>
                 <span><strong>Voto</strong><br> <StarFlix :vote="info.vote_average" /></span>
                 <p><span><strong>Overview</strong><br></span><br>{{info.overview}}</p>
             </div>
@@ -26,6 +26,11 @@ export default {
     props: {
         info: Object, //'info' rimanda un object ( ossia i singoli film compresi nell'array di oggetti filtrati)
     },
+    data(){
+        return{
+            flag: ['ca','it', 'en', 'fr', 'es', 'da', 'ja', 'ko', 'nl','no', 'pt', 'ro', 'ru', 'sv', 'zh'],//add ogni bandiera che ci serve
+        }
+    },
     methods: {
         getPoster(path) {
             if (path === null) {
@@ -40,4 +45,5 @@ export default {
 
 <style scoped lang="scss">
     @import '../style/utilities.scss';//importo lo stile della card
+    
 </style>

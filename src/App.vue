@@ -29,6 +29,7 @@ export default {
       const params= {
         query: query,
         api_key: this.api_key,
+        lang: 'it-IT'
       }
 
       axios.get(`https://api.themoviedb.org/3/search/movie`, { params }).then(response => {

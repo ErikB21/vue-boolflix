@@ -28,6 +28,7 @@ export default {
         movies: Array,//importo i dati da App.vue e li passo con un ciclo v-for
         series: Array, //importo i dati da App.vue e li passo con un ciclo v-for
     },
+    
 }
     
 </script>
