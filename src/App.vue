@@ -14,13 +14,14 @@ export default {
   name: 'App',
   components: {
     HeaderFlix,
-    MainFlix
-  },
+    MainFlix,
+},
   data(){
     return{
       movies: [],//torno array vuoto che verrà popolato dalla chiamata API con i film
       api_key: 'fbf92bf5e34c88255fa295508c54019f', //key per API,
       series: [],//torno array vuoto che verrà popolato da chiamta Api con le serie tv
+      loadFlix: true
     }
   },
   methods:{
@@ -29,12 +30,21 @@ export default {
         query: query,
         api_key: this.api_key,
       }
+
       axios.get(`https://api.themoviedb.org/3/search/movie`, { params }).then(response => {
         this.movies = response.data.results; //salviamo nel nostro array vuoto la nostra chiamta ad axios per i film
-      });
+      })
+      .catch(err =>{
+        console.log(err);
+      })
+
       axios.get(`https://api.themoviedb.org/3/search/tv`, {params}).then(response =>{
         this.series = response.data.results; //salviamo nell'array vuoto la chiamata ad axios per le serie tv
       })
+      .catch(err =>{
+        console.log(err);
+      })
+      
       
     },
     starSearch(query){//filtra tra i movie e le serie
