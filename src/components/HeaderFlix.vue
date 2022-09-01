@@ -35,5 +35,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    @import '../style/styleAnimHead.scss'
+    @import '../style/styleHead.scss'
 </style>

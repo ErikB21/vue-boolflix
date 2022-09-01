@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="kenburns-top" id="app">
     <HeaderFlix @searching="starSearch" />
     <MainFlix :movies="movies" :series="series" /> <!--aggiungo la variabile popolata dalla chiamata axios in un valore che passerò come props-->
   </div>
@@ -64,19 +64,7 @@ export default {
     background-repeat: no-repeat;
     background-image: url(./assets/rick.jpg);
     background-size: cover;
-    &::-webkit-scrollbar {
-          width: 12px;               /* width of the entire scrollbar */
-    }
-    
-    &::-webkit-scrollbar-track {
-        background: black;        /* color of the tracking area */
-    }
-    
-    &::-webkit-scrollbar-thumb {
-        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );    /* color of the scroll thumb */
-        border-radius: 30px;       /* roundness of the scroll thumb */
-        border: 2px solid black;  /* creates padding around scroll thumb */
-    }
+    @import './style/animationApp.scss';
   }
   
 </style>
