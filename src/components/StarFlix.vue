@@ -1,6 +1,6 @@
 <template>
     <div>
-        <i class="fa-solid fa-star" v-for="index in voteStar" :key="index"></i>
+        <i class="fa-star " v-for="n in 5" :key="n" :class="n > voteStar? 'fa-regular' : 'fa-solid'"></i>
     </div>
 </template>
 
@@ -20,8 +20,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    i{
+    .fa-solid{
         color: yellow;
+        padding-left: 3px;
+        margin-left: 3px;
+    }
+    .fa-regular{
+        color: white;
         padding-left: 3px;
         margin-left: 3px;
     }
